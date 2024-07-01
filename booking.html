@@ -1,0 +1,3234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!------ header -------->
+    <header class="booking-header">
+        <div class="container">
+            <div class="head">
+                <div class="navbar flex-between">
+                    <div class="logo">
+                        <a href="./index.html"><img src="assets/images/Maldives luxury suites LOHO.png"
+                                alt="site-logo"></a>
+                    </div>
+                </div>
+
+                <nav class="booking-nav">
+                    <!--------- currency-button --------->
+                    <button id="currencyButton" onclick="showCurrencyBox()" title="Select Your Currency">INR</button>
+                    <div id="overlay" class="overlay" onclick="closeCurrencyBox()"></div>
+                    <!-- currency box popup content -->
+                    <div id="currencyBox" class="currency-box container">
+                        <div class="currency-box-content">
+                            <div class="box-head">
+                                <h2>Select your currency</h2>
+                                <span class="close" onclick="closeCurrencyBox()">&times;</span>
+                            </div>
+                            <p>Where applicable prices will be converted to, and shown in, the currency that you select.
+                                The
+                                currency you pay in may differ based on your reservation, and a service fee may also
+                                apply.
+                            </p>
+                            <h5>Suggested for you</h5>
+                            <!-- currency ul-1 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Euro</span>
+                                        <span class="currency-code">EUR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>United States Dollar</span>
+                                        <span class="currency-code">USD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Pound Sterling</span>
+                                        <span class="currency-code">GBP</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>United Arab Emirates</span>
+                                        <span class="currency-code">AED</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-2 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Australian Dollar</span>
+                                        <span class="currency-code">AUD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Thai Baht</span>
+                                        <span class="currency-code">THB</span>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <h5>All currencies</h5>
+                            <!--currency ul-3 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button currency-swapbtn">
+                                        <span>Indian Rupee</span>
+                                        <span class="currency-code">INR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Property currency</span>
+                                        <span class="currency-code">€$£</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Argentine Peso</span>
+                                        <span class="currency-code">ARS</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Australian Dollar</span>
+                                        <span class="currency-code">AUD</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!--currency ul-4 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Azerbaijani Manat</span>
+                                        <span class="currency-code">AZN</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Bahraini Dinar</span>
+                                        <span class="currency-code">BHD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Brazilian Real</span>
+                                        <span class="currency-code">BRL</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Bulgarian Lev</span>
+                                        <span class="currency-code">BGN</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!--currency ul-5 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Canadian Dollar</span>
+                                        <span class="currency-code">CAD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Chilean Peso</span>
+                                        <span class="currency-code">CLP</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Chinese Yuan</span>
+                                        <span class="currency-code">CNY</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Colombian Peso</span>
+                                        <span class="currency-code">COP</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!--currency ul-6 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Czech Koruna</span>
+                                        <span class="currency-code">CZK</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Danish Krone</span>
+                                        <span class="currency-code">DKK</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Egyptian pound</span>
+                                        <span class="currency-code">EGP</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Euro</span>
+                                        <span class="currency-code">EUR</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-7 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Fijian Dollar</span>
+                                        <span class="currency-code">FJD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Georgian Lari</span>
+                                        <span class="currency-code">GEL</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Hong Kong Dollar</span>
+                                        <span class="currency-code">HKD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Hungarian Forint</span>
+                                        <span class="currency-code">AUD</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-8 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Icelandic Krona</span>
+                                        <span class="currency-code">ISK</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Indonesian Rupiah</span>
+                                        <span class="currency-code">IDR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Isreali New Shekel</span>
+                                        <span class="currency-code">ILS</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Japanese Yen</span>
+                                        <span class="currency-code">JPY</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-9 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Mexican Peso</span>
+                                        <span class="currency-code">MXN</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Moldovan Leu</span>
+                                        <span class="currency-code">MDL</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Namibian Dollar</span>
+                                        <span class="currency-code">NAD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>New Taiwan Dollar</span>
+                                        <span class="currency-code">TWD</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-10 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>New Zealand Dollar</span>
+                                        <span class="currency-code">NZD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Norwegian Krone</span>
+                                        <span class="currency-code">NOK</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Omani Rial</span>
+                                        <span class="currency-code">OMR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Polish Zloty</span>
+                                        <span class="currency-code">PLN</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-11 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Pound Sterling</span>
+                                        <span class="currency-code">GBP</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Qatari Riyal</span>
+                                        <span class="currency-code">QAR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Romanian Leu</span>
+                                        <span class="currency-code">RON</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Russian Rouble</span>
+                                        <span class="currency-code">RUB</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-12 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Saudi Arabian Riyal</span>
+                                        <span class="currency-code">SAR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Singapore Dollar</span>
+                                        <span class="currency-code">SGD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>South African Rand</span>
+                                        <span class="currency-code">ZAR</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>South Korean Won</span>
+                                        <span class="currency-code">KRW</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-13 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Swedish Krona</span>
+                                        <span class="currency-code">SEK</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Swiss Franc</span>
+                                        <span class="currency-code">CHF</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Thai Baht</span>
+                                        <span class="currency-code">THB</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Turkish Lira</span>
+                                        <span class="currency-code">TRY</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- currency ul-14 -->
+                            <ul class="currency-ul">
+                                <li>
+                                    <button class="currency-button">
+                                        <span>Ukrainian Hryvnia</span>
+                                        <span class="currency-code">UAH</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>United Arab Emirates</span>
+                                        <span class="currency-code">AED</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>United States Dollar</span>
+                                        <span class="currency-code">USD</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="currency-button">
+                                        <span>West African CFA franc</span>
+                                        <span class="currency-code">XOF</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- customer-service icon -->
+                    <button class="customer-service">
+                        <img src="./assets/images/customer-service.svg" alt="customer-service">
+                    </button>
+
+                    <!-- list-property button -->
+                    <button class="list-property">
+                        List your property
+                    </button>
+
+                    <!-- register and signin button -->
+                    <div class="register-sign">
+                        <button>Register</button>
+                        <button>Sign in</button>
+                    </div>
+
+                    <div class="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- navigation-navs -->
+        <nav class="navigation">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a class="navlink active-link" href="/maldives-luxury-suites/index.html">Home</a></li>
+                    <li><a class="navlink" href="/maldives-luxury-suites/rooms.html">Rooms</a></li>
+                    <li><a class="navlink" href="#">Luxury Rooms</a></li>
+                    <li><a class="navlink" href="#">Offers</a></li>
+                    <li><a class="navlink" href="#">Things To Do</a></li>
+                    <li><a class="navlink" href="#">Culture</a></li>
+                    <li><a class="navlink" href="#">Gallery</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="container">
+            <!-- form -->
+            <div class="form-div">
+                <form action="">
+
+                    <!-- particular-hotel -->
+                    <div class="input-container form-dropdown" onclick="toggleDropdown('particular-dropdown')">
+                        <a>Particular Hotel / Resort</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <!--particular mobile-dropdown -->
+                        <ul id="particular-dropdown">
+                            <li><a href="">Luxury Hotels</a></li>
+                            <li><a href="">Boutique Hotels</a></li>
+                            <li><a href="">Budget Hotels</a></li>
+                            <li><a href="">Luxury Hotels</a></li>
+                            <li><a href="">Boutique Hotels</a></li>
+                            <li><a href="">Budget Hotels</a></li>
+                        </ul>
+
+                        <!-- desktop-view of 3 dropdowns-->
+                        <div class="partroomtrans">
+                            <div id="part-room-tran">
+                                <div id="particular">
+                                    <ul>
+                                        <li><a href="">Luxury Hotels</a></li>
+                                        <li><a href="">Boutique Hotels</a></li>
+                                        <li><a href="">Budget Hotels</a></li>
+                                        <li><a href="">Luxury Hotels</a></li>
+                                        <li><a href="">Boutique Hotels</a></li>
+                                        <li><a href="">Budget Hotels</a></li>
+                                    </ul>
+                                </div>
+                                <div id="room">
+                                    <ul>
+                                        <li><a href="">Single Room</a></li>
+                                        <li><a href="">Double Room</a></li>
+                                        <li><a href="">Twin Room</a></li>
+                                        <li><a href="">Suite</a></li>
+                                    </ul>
+                                </div>
+                                <div id="transfer">
+                                    <ul>
+                                        <li><a href="">Economy</a></li>
+                                        <li><a href="">Business</a></li>
+                                        <li><a href="">First Class</a></li>
+                                        <li><a href="">Premium</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room choice -->
+                    <div class="input-container form-dropdown" onclick="toggleDropdown('Room-dropdown')">
+                        <a>Room Choice</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <!--Room mobile-dropdown -->
+                        <ul id="Room-dropdown">
+                            <li><a href="">Single Room</a></li>
+                            <li><a href="">Double Room</a></li>
+                            <li><a href="">Twin Room</a></li>
+                            <li><a href="">Suite</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Transport by -->
+                    <div class="input-container form-dropdown" onclick="toggleDropdown('transport-dropdown')">
+                        <a>Transport By</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <!--Transport mobile-dropdown -->
+                        <ul id="transport-dropdown">
+                            <li><a href="">Economy</a></li>
+                            <li><a href="">Business</a></li>
+                            <li><a href="">First Class</a></li>
+                            <li><a href="">Premium</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- check-in and check-out datepicker -->
+                    <div class="input-container checkout">
+                        <div class="date-inputbox"><span id="checkIn">Check-in date
+                            </span><span>-</span> <span id="checkOut">Check-out
+                                date</span></div>
+                        <img id="date-img" src="./assets/images/calender.svg" alt="calender-icon">
+
+                        <!-- date-picker popupbox -->
+                        <div class="date-picker">
+                            <div class="tabs">
+                                <h5 id="tab-1">Calender</h5>
+                                <h5 id="tab-2">I'm flexible</h5>
+                            </div>
+                            <div id="content-1">
+                                <div class="calender-div">
+                                    <!-- may -->
+                                    <div class="month active">
+                                        <h4>May 2024</h4>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Su</th>
+                                                    <th>Mo</th>
+                                                    <th>Tu</th>
+                                                    <th>We</th>
+                                                    <th>Th</th>
+                                                    <th>Fr</th>
+                                                    <th>Sa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>13</td>
+                                                    <td>14</td>
+                                                    <td>15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td>21</td>
+                                                    <td>22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td>25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td>28</td>
+                                                    <td>29</td>
+                                                    <td>30</td>
+                                                    <td>31</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- june -->
+                                    <div class="month active">
+                                        <h4>June 2024</h4>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Su</th>
+                                                    <th>Mo</th>
+                                                    <th>Tu</th>
+                                                    <th>We</th>
+                                                    <th>Th</th>
+                                                    <th>Fr</th>
+                                                    <th>Sa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td>13</td>
+                                                    <td>14</td>
+                                                    <td>15</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td>21</td>
+                                                    <td>22</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td>25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td>28</td>
+                                                    <td>29</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="month">
+                                        <h4>July 2024</h4>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Su</th>
+                                                    <th>Mo</th>
+                                                    <th>Tu</th>
+                                                    <th>We</th>
+                                                    <th>Th</th>
+                                                    <th>Fr</th>
+                                                    <th>Sa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td>13</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>14</td>
+                                                    <td>15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>21</td>
+                                                    <td>22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td>25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>28</td>
+                                                    <td>29</td>
+                                                    <td>30</td>
+                                                    <td>31</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="month">
+                                        <h4>August 2024</h4>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Su</th>
+                                                    <th>Mo</th>
+                                                    <th>Tu</th>
+                                                    <th>We</th>
+                                                    <th>Th</th>
+                                                    <th>Fr</th>
+                                                    <th>Sa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td>13</td>
+                                                    <td>14</td>
+                                                    <td>15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td>21</td>
+                                                    <td>22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td>28</td>
+                                                    <td>29</td>
+                                                    <td>30</td>
+                                                    <td>31</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <i id="next-month" class='fas fa-chevron-right'></i>
+                                    <i id="previous-month" class='fas fa-chevron-left'></i>
+
+                                </div>
+
+                                <div class="plus-days">
+                                    <a>Exact dates</a>
+                                    <a><i class="fa fa-plus-minus"></i>1 day</a>
+                                    <a><i class="fa fa-plus-minus"></i>2 days</a>
+                                    <a><i class="fa fa-plus-minus"></i>3 days</a>
+                                    <a><i class="fa fa-plus-minus"></i>7 days</a>
+                                </div>
+                            </div>
+
+                            <div id="content-2">
+                                <div class="flexible-div1">
+                                    <h4>How long do you want to stay?</h4>
+                                    <div class="check-boxes">
+                                        <div>
+                                            <input type="radio">
+                                            <label for="">A weekend</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio">
+                                            <label for="">A week</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio">
+                                            <label for="">A month</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio">
+                                            <label for="">Other</label>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4>When do you want to go?</h4>
+                                        <p>Select up to 3 months</p>
+                                        <div class="select-3">
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>May</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Jun</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Jul</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Aug</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Sep</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Oct</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="calender">
+                                                <div class="box-text">
+                                                    <span>Nov</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="">
+                                                <div class="box-text">
+                                                    <span>Dec</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="">
+                                                <div class="box-text">
+                                                    <span>Jan</span>
+                                                    <span>2025</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="">
+                                                <div class="box-text">
+                                                    <span>Feb</span>
+                                                    <span>2025</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="">
+                                                <div class="box-text">
+                                                    <span>Mar</span>
+                                                    <span>2025</span>
+                                                </div>
+                                            </div>
+                                            <div class="calender-box">
+                                                <img src="./assets/images/calender-2.svg" alt="">
+                                                <div class="box-text">
+                                                    <span>Apr</span>
+                                                    <span>2025</span>
+                                                </div>
+                                            </div>
+
+                                            <i id="select3-next" class='fas fa-chevron-right'></i>
+                                            <i id="select3-previous" class='fas fa-chevron-left'></i>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flexible-button">
+                                        <p>Select days and months</p>
+                                        <button>Select dates</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--adults,children and rooms selection input -->
+                    <div class="input-container adut-childrn" id="staySelectPopup">
+                        <input type="text" id="stayId" placeholder="1 adults - 0 Children - 1 room" readonly>
+                        <img id="user-icon" src="./assets/images/user.svg" alt="user-icon">
+
+                        <!-- stay-select popup -->
+                        <div class="stayselect">
+
+                            <div class="stay-1">
+                                <p>Adults</p>
+                                <div class="stay-counter adults-counter">
+                                    <span class="decrement">-</span>
+                                    <p class="adults-count">1</p>
+                                    <span class="increment">+</span>
+                                </div>
+                            </div>
+
+                            <div class="stay-1">
+                                <p>Children</p>
+                                <div class="stay-counter children-counter">
+                                    <span class="decrement">-</span>
+                                    <p class="children-count">0</p>
+                                    <span class="increment">+</span>
+                                </div>
+                            </div>
+
+                            <!-- children-counter trigger div  -->
+                            <div class="age-dropdown">
+                                <a class="age-btn"><span>Age needed</span><i class='fas fa-chevron-down'></i></a>
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li><a>Age needed</a></li>
+                                        <li><a>0 years old</a></li>
+                                        <li><a>1 years old</a></li>
+                                        <li><a>2 years old</a></li>
+                                        <li><a>3 years old</a></li>
+                                        <li><a>4 years old</a></li>
+                                        <li><a>5 years old</a></li>
+                                        <li><a>6 years old</a></li>
+                                        <li><a>7 years old</a></li>
+                                        <li><a>8 years old</a></li>
+                                        <li><a>9 years old</a></li>
+                                        <li><a>10 years old</a></li>
+                                        <li><a>11 years old</a></li>
+                                        <li><a>12 years old</a></li>
+                                        <li><a>13 years old</a></li>
+                                        <li><a>14 years old</a></li>
+                                        <li><a>15 years old</a></li>
+                                        <li><a>16 years old</a></li>
+                                        <li><a>17 years old</a></li>
+                                    </ul>
+                                </div>
+                                <p>To find you a place to stay that fits your entire group along with correct prices, we
+                                    need to know how old your child will be at check-out</p>
+                            </div>
+
+
+                            <div class="stay-1">
+                                <p>Rooms</p>
+                                <div class="stay-counter rooms-counter">
+                                    <span class="decrement">-</span>
+                                    <p class="rooms-count">1</p>
+                                    <span class="increment">+</span>
+                                </div>
+                            </div>
+
+                            <div class="pets">
+                                <p>Travelling with pets?</p>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="pet-slider round"></span>
+                                </label>
+                            </div>
+
+                            <a class="Done">Done</a>
+                        </div>
+
+                    </div>
+                    <button id="search-button">Search</button>
+                </form>
+            </div>
+
+        </section>
+    </header>
+
+    <!-- -------Mobile Off canvas Sidebar--------- -->
+    <div class="offcanvas-menu-sidebar">
+        <div>
+            <button class="offcanvas-close flex-center">&#215</button>
+            <button class="getaquote">GET A QUOTE</button>
+            <button id="currencyButton" onclick="showCurrencyBox()" title="Select Your Currency">INR</button>
+            <div class="mobile-search-bar">
+                <input type="text" placeholder="Search Rooms" />
+                <button class="main-btn">
+                    <img src="assets/images/search-icon.svg" class="search-icon" alt="Search Icon" width="20px" />
+                </button>
+            </div>
+            <ul class="nav-list">
+                <li><a class="navlink active-link" href="/maldives-luxury-suites/index.html">Home</a></li>
+                <li><a class="navlink" href="/maldives-luxury-suites/booking.html">Rooms</a></li>
+                <li><a class="navlink" href="#">Luxury Rooms</a></li>
+                <li><a class="navlink" href="#">Offers</a></li>
+                <li><a class="navlink" href="#">Things To Do</a></li>
+                <li><a class="navlink" href="#">Culture</a></li>
+                <li><a class="navlink" href="#">Gallery</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- -------Mobile Off canvas Sidebar--------- -->
+
+
+    <main>
+        <!-- ----------Overlay on Sidebar Open--------- -->
+        <div class="dark-overlay"></div>
+        <!-- ----------Overlay on Sidebar Open--------- -->
+
+        <!-- breadcrumb -->
+        <section class="container bread-section">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Soudi Arabia</a></li>
+                <li><a href="#">Makkah Al Mukarramah province</a></li>
+                <li><a href="#">Makkah</a></li>
+                <li><a href="#" style="color: black;">Search results</a></li>
+            </ul>
+        </section>
+        <!-- filters and hotel section -->
+        <section class="container">
+            <div class="booking-wrapper">
+                <!-- sidebar filters -->
+                <aside class="filter-side" id="filter-side">
+                    <!-- map div -->
+                    <div class="map">
+                        <img src="https://cf.bstatic.com/psb/capla/static/media/map-entry-point.6b01012a.png"
+                            style="width: 100%;height:150px;border-radius: 10px;cursor: pointer;" alt="map">
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 id="first-h4">Filter by:</h4>
+                        <!-- first box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Your previous filters</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">5 starts</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Emergency cord in bathroom</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Shower chair</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Less than 1 km</label>
+                                    <div style="display:block;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- second-box -->
+                        <div class="filter" id="popular-filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Popular filters</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">4 starts</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Less than 1 km</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Apartments</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Restaurant</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Free WiFi</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">parking</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Kitchen / Kitchenette</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Villas</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- third-box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Propert type</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Hotels</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Apartments</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Chalets</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Villas</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fourth-box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Facilities</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Parking</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Free WiFi</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Restaurant</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Pets allowed</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Room service</label>
+                                </div>
+
+                                <div id="showall-btn">
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">24-hour front desk</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Fitness center</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Non-smoking rooms</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Airport shuttle</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Family rooms</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Spa and wellness center</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Electric vehicle charging station</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Wheelchair accessible</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Swimming Pool</label>
+                                    </div>
+                                </div>
+                                <button onclick="toggleShowAll()" id="myBtn">Show all 14</button>
+                            </div>
+                        </div>
+                        <!-- fifth box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Review score</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Superb: 9+</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Very good:8+</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Good:7+</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Pleasant:6+</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- seventh box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Highly rated features</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Very clean</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- eighth box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Room facilities</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Private pool</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Air conditioning</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Kitchen/Kitchenette</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Balcony</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Private bathroom</label>
+                                </div>
+
+                                <div id="sshowall-btn">
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">TV</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Shower</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Barbecue</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Toilet</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Board games/puzzles</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Sofa bed</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Towels</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Pool with a view</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Electric kettle</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Entire unit located on ground floor</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Plunge pool</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Tea/Coffee maker</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Children's high chair</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Shared toilet</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Toilet paper</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Bathrobe</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Fax</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Terrace</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Garden view</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Safety deposit box</label>
+                                    </div>
+                                </div>
+                                <button onclick="ttoggleShowAll()" id="mmyBtn">Show all 25</button>
+                            </div>
+                        </div>
+                        <!-- 9 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Neighbourhood</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Ajyad</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Al Aziziyah</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Al Rasaifah</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Al shawqiyyah</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Al Sharayaa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 10 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Property rating</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">1 star</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">2 star</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">3 star</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">4 star</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">5 star</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Unrated</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 11 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Entire places</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Entire homes & apartments</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 12 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Distance from center of Mekkah</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Less than 1 km</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Less than 1 km</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Less than 1 km</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 13 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Landmarks</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Abraj Al Bait</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Zamzam Well</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Masjid Al Haram</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Makkah Mall</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 14 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Fun things to do</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Fitness center</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Public Bath</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Kid's club</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Fitness</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Message chair</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 15 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Certifications</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Sustainability certification</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 16 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Brands</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Millennium Hotels</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Park Inn by Radisson</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Hilton Hotels & Resorts</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Swissotel Hotels & Resorts</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Le Meridien Hotels & Resorts</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Best Western</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Ramada</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Novotel</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Mercure</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">InterContinental Hotels & Resorts</label>
+                                </div>
+
+                                <div id="showallbtn-tree">
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Marriott Hotels & Resort</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Copthorne Hotels</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Jumeirah</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Pullman Hotels and Resorts</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Conrad Hotels & Resorts</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Doubletree by Hilton</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">The Address Hotels and Resorts</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">ibis Styles</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Hyatt Regency</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Rayhaan Hotels & Resorts by Rotana</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Plunge pool</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Tea/Coffee maker</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Children's high chair</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Shared toilet</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Toilet paper</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Bathrobe</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Fax</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Terrace</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Garden view</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox">
+                                        <label for="">Safety deposit box</label>
+                                    </div>
+                                </div>
+                                <button onclick="ShowAlltree()" id="mmyBtn-t">Show all 20</button>
+                            </div>
+                        </div>
+                        <!-- 17 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Property accessibility</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Toilet with grab rails</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Higher level toilet</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Lower bathroom sink</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Emergency cord in bathroom</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Visual aids:Braille</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Visual aids:Tactile signs</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Auditory guidance</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 18 box -->
+                        <div class="filter">
+                            <div class="filter-boxs">
+                                <h4 id="second-h4">Room accessibility</h4>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Entire unit located on ground floor</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Upper floors accessible by elevator</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Entire unit wheelchair by elevator</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Toilet with grab rails</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Adapted bath</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Roll-in shower</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Walk-in shower</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Raised toilet</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Lowered sink</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Emergency cord in bathroom</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Shower chair</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- sidebar ended -->
+
+                <!-- content-section / hotel cards-->
+                <div class="content-side">
+                    <h3 id="first-h3">Makkah: 323 properties found</h3>
+                    <!-- sort-button -->
+                    <button id="popupButton">
+                        ⮃
+                        Sort by: Top picks for groups
+                        ⭿
+                    </button>
+                    <!-- sort button popup -->
+                    <div id="popupBox">
+                        <ul>
+                            <li><a href="">Top picks for groups</a></li>
+                            <li><a href="">Homes & apartments first</a></li>
+                            <li><a href="">Property rating (high to low)</a></li>
+                            <li><a href="">Property rating (low to high)</a></li>
+                            <li><a href="">Distance from city center</a></li>
+                            <li><a href="">Top reviewed</a></li>
+                        </ul>
+                    </div>
+                    <!-- Hotel-details-card -->
+                    <div class="hotel-cards">
+                        <!-- hotel card-1 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/277338135.webp?k=907e5b23890682474386bbacae07474bbb83277fecf936144c613ac48eed4837&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel card-2 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/520998885.webp?k=a14b6a46aa2d9fd1ccaf612dcbfdc81a53a4c388a91bb51882df23abc73ea40f&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                    </div>
+
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Just a 750 metre from the holy Haram, Emaar Grand Hotel is set in the lively
+                                        Ibrahim Al Khalil Street in Mecca.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel card-3 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/558208057.webp?k=3d1bcd13f8a8752d67553edb6eb518772dc4ffe1e8b475721b2ffd12cdadeefc&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel
+                                        </h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the holy city, Swissotel Al Maqam Makkah stands tall at the heart of
+                                        the Muslim world.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card-4 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/556840558.webp?k=8d5b8f238780e6b6f6fa27faca8ad68d27a460e6e1aecb4cad388715a1b86385&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 5 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/536194346.webp?k=f0868b5be6d2ff51dda13628bc7a77b1001e64bb6087f7cdf7bed000bb408db9&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 6 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/542022787.webp?k=1b542a5a79f07b8b9812ab83144cd1a78a711a350e262968b011c27cc2eb2744&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 7 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/536194346.webp?k=f0868b5be6d2ff51dda13628bc7a77b1001e64bb6087f7cdf7bed000bb408db9&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 8 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/520998885.webp?k=a14b6a46aa2d9fd1ccaf612dcbfdc81a53a4c388a91bb51882df23abc73ea40f&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 9 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/365327199.webp?k=a93aa9e38807b88f66169c09273d4d7ea74293d7177ed8150db768178e8d69f7&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 9 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/459589829.webp?k=eb161a6d9d65d8a9244de1fa790e87dec667e47235ea080d6ad1df3baa8b74e5&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 10 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/465560036.webp?k=0389fe091d8630ca2fa7aae21a3b0360ac71360cd338c0e6908e7a7d9b117acc&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <img src="./assets/images/stars.svg" alt="">
+                                            <p>Cleanlines 8.8</p>
+                                        </a>
+
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 11 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/483752681.webp?k=78cf712ae80aa43162e9ad32ba2e97c0397ea1b3a02672806920fc85b746775e&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 12 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/471279319.webp?k=263e95c4a72aee4702568e2d8ac4eb07c25305c0ebb0210a2957c56e78a3b74e&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 13 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/536428550.webp?k=b67de61b70a83bd973e267adc7689cbf26b9abfc16bc5f11c933d65a21c38d19&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 14 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/89694431.webp?k=8404531e2ac77432e3b7d2d9ca27dc38b156dff8c8176039462140093ae0d2ec&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hotel-card 15 -->
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/483742572.webp?k=26cc8aca851cb6d20e4b055d189f063473ae9bdf00334a4ad31bdf89fab12102&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- sign-in/register box -->
+                        <div class="signsave-box">
+                            <div class="content-txts">
+                                <h3>Sign in, save money</h3>
+                                <p>Unlock member-only discounts in Makkah</p>
+                                <button>Sign in</button>
+                                <a href="">Register</a>
+                            </div>
+                            <img src="https://t-cf.bstatic.com/design-assets/assets/v3.112.0/illustrations-traveller/GeniusGenericGiftBox-dark@2x.png"
+                                alt="">
+                        </div>
+                        <!-- sign-in/register box end -->
+
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/483742572.webp?k=26cc8aca851cb6d20e4b055d189f063473ae9bdf00334a4ad31bdf89fab12102&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-card">
+                            <div class="img-div">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/539557530.webp?k=c2a97a240412dd48248cd2144154f10c7d4ad0fb71bf767cb7ba0529567f4510&o="
+                                    alt="">
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="content-1">
+                                    <div class="head-star">
+                                        <h4>Makkah Hotel</h4>
+                                        <div class="stars flex-center">
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                            <img width="18" src="assets/images/rating-star.svg" alt="star" />
+                                        </div>
+                                        <i class="fa fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="links">
+                                        <a href="">Makkah</a>
+                                        <a href="">Show on map</a>
+                                        <p>500 m from center</p>
+                                    </div>
+                                    <p>Overlooking the Holy Haram Mosque and the Kaaba, the Makkah Hotel is set in the
+                                        heart of Makkah, Saudi Arabia.</p>
+                                </div>
+
+                                <div class="content-2">
+                                    <div class="v-good">
+                                        <div>
+                                            <h4>Very good</h4>
+                                            <p>8,322 reviews</p>
+                                        </div>
+                                        <div>
+                                            <span>8.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="magic-star">
+                                        <a href="">
+                                            <!-- <i class="fa fa-star"></i> -->
+                                            <img src="./assets/images/stars.svg" alt="">
+                                        </a>
+                                        <p>Cleanlines 8.8</p>
+                                    </div>
+                                    <button>Show prices</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- hotel-cards end -->
+
+                    <!-- load-more button -->
+                    <button class="load-more">Load more results</button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- email subscription box -->
+        <section class="stayin-section">
+            <div class="stayin">
+                <h4>Stay in the know</h4>
+                <p>Sign up to get marketing emails from Booking.com, including promotions, rewards, travel experiences
+                    and
+                    information about Booking.com's and Booking.com Transport Limited's products and services. </p>
+                <input type="email" placeholder="Your email address">
+                <!-- <label for="">Subscribe</label> -->
+                <button>Subscribe</button>
+                <p>You can opt out any time.See our <a href="#">privacy statement</a>.</p>
+            </div>
+        </section>
+        <!-- email subscription box end-->
+
+        <section class="features-section">
+            <div class="container">
+                <div class="features flex-center">
+                    <div class="feature flex-center">
+                        <div class="feature-icon flex-center">
+                            <img src="assets/images/icons8-calendar.gif" alt="feature">
+                        </div>
+                        <div class="feature-content">
+                            <h2>New Rooms Listing Every Day</h2>
+                            <span>For Every Budget + Save Money</span>
+                        </div>
+                    </div>
+                    <div class="feature flex-center">
+                        <div class="feature-icon flex-center">
+                            <img src="assets/images/bed-room (1).svg" alt="feature">
+                        </div>
+                        <div class="feature-content">
+                            <h2>20,363 Rooms From Maldives</h2>
+                            <span>Including Luxury Suites + Single Bedrooms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- ------Bottom features section------ -->
+
+        <section class="socials-section">
+            <div class="container">
+                <div class="socials flex-between">
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/whatsapp.svg" alt="whatsapp">
+                        </div>
+                        <span><a href="">+960 12345678</a></span>
+                    </div>
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/Viber-2.svg" alt="Viber">
+                        </div>
+                        <span><a href="">+960 98765432</a></span>
+                    </div>
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/telegram.svg" alt="Telegram">
+                        </div>
+                        <span><a href="">+960 24680135</a></span>
+                    </div>
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/skype.svg" alt="Skype">
+                        </div>
+                        <span><a href="">+960 57575757</a></span>
+                    </div>
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/wechat.svg" alt="wechat">
+                        </div>
+                        <span><a href="">+960 31415926</a></span>
+                    </div>
+
+                    <div class="social-info flex-center">
+                        <div class="social-icon flex-center">
+                            <img src="assets/images/signal-app-icon.svg" alt="Signal Messenger">
+                        </div>
+                        <span><a href="">+960 88888888</a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- -------footer----- -->
+    <footer>
+        <div class="container">
+            <h3 class="title-h3">Maldives Resorts</h3>
+            <div class="footer-resorts-container">
+
+                <ul class="footer-resorts">
+                    <li><a href="#">Coral Haven Retreat Resorts and Spa</a></li>
+                    <li><a href="#">Azure Serenity Resorts and Spa</a></li>
+                    <li><a href="#">Whispering Palms Hideaway Resorts and Spa</a></li>
+                    <li><a href="#">Paradise Cove Villas Resorts and Spa</a></li>
+                </ul>
+
+                <ul class="footer-resorts">
+                    <li><a href="#">Turquoise Cove Resorts and Spa</a></li>
+                    <li><a href="#">Mystic Sands Resorts and Spa</a></li>
+                    <li><a href="#">Crimson Sunset Haven Resorts and Spa</a></li>
+                    <li><a href="#">Tranquil Tides Hideaway Resorts and Spa</a></li>
+                </ul>
+
+                <ul class="footer-resorts">
+                    <li><a href="#">Sapphire Sands Resorts and Spa</a></li>
+                    <li><a href="#">Tropical Paradise Hideaway Resorts and Spa</a></li>
+                    <li><a href="#">Golden Beach Retreat Resorts and Spa</a></li>
+                    <li><a href="#">Secluded Cove Villas Resorts and Spa</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-copyright flex-between">
+                <p>©️ Copy right 2024. All rights reserved to Maldives Luxury Suits.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // sort by -popupBox
+        document.addEventListener("click", function (event) {
+            const button = document.getElementById("popupButton");
+            const popupBox = document.getElementById("popupBox");
+
+            if (event.target === button) {
+                popupBox.style.display = (popupBox.style.display === "block") ? "none" : "block";
+            } else if (!popupBox.contains(event.target)) {
+                popupBox.style.display = "none";
+            }
+        });
+        //sort by popupBox ends
+
+        // form-div dropdown 3 buttons
+        const partroomtrans = document.querySelector('.partroomtrans');
+        const dropdowns = document.querySelectorAll('.form-dropdown');
+        const dropdownMap = {
+            'particular-dropdown': document.getElementById('particular-dropdown'),
+            'Room-dropdown': document.getElementById('Room-dropdown'),
+            'transport-dropdown': document.getElementById('transport-dropdown')
+        };
+
+        function toggleDropdown(dropdownId) {
+            if (window.innerWidth <= 768) {
+                partroomtrans.style.display = 'none';
+                Object.values(dropdownMap).forEach(dropdown => {
+                    if (dropdown.id !== dropdownId) {
+                        dropdown.style.display = 'none';
+                    }
+                });
+                dropdownMap[dropdownId].style.display = (dropdownMap[dropdownId].style.display === 'block') ? 'none' : 'block';
+            } else {
+                partroomtrans.style.display = (partroomtrans.style.display === 'block') ? 'none' : 'block';
+            }
+        }
+
+        document.addEventListener('click', event => {
+            const isInsideDropdown = Array.from(dropdowns).some(dropdown => dropdown.contains(event.target));
+            const isInsidePartroomtrans = partroomtrans.contains(event.target);
+            if (!isInsideDropdown && !isInsidePartroomtrans) {
+                partroomtrans.style.display = 'none';
+                Object.values(dropdownMap).forEach(dropdown => dropdown.style.display = 'none');
+            }
+        });
+
+        partroomtrans.addEventListener('click', event => {
+            event.stopPropagation();
+        });
+        // form-div dropdown 3 buttons
+
+        // check-in/out
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = {
+                dateInputBox: document.querySelector('.date-inputbox'),
+                datePicker: document.querySelector('.date-picker'),
+                dateImg: document.getElementById('date-img'),
+                tab1: document.getElementById('tab-1'),
+                tab2: document.getElementById('tab-2'),
+                content1: document.getElementById('content-1'),
+                content2: document.getElementById('content-2'),
+                nextMonthBtn: document.getElementById('next-month'),
+                previousMonthBtn: document.getElementById('previous-month'),
+                months: document.querySelectorAll('.month'),
+                formDropdowns: document.querySelectorAll('.form-dropdown'),
+                calendarBoxes: document.querySelectorAll('.calender-box'),
+                nextButton: document.getElementById('select3-next'),
+                previousButton: document.getElementById('select3-previous')
+            };
+
+            let currentMonthIndex = 0;
+            let currentIndex = 0;
+
+            const toggleDatePicker = () => {
+                elements.datePicker.style.display = (elements.datePicker.style.display === "none" || elements.datePicker.style.display === "") ? "block" : "none";
+            };
+
+            const showContent = (contentToShow, contentToHide) => {
+                contentToShow.style.display = 'flex';
+                contentToHide.style.display = 'none';
+            };
+
+            const updateMonthVisibility = () => {
+                const isSmallScreen = window.innerWidth <= 578;
+
+                elements.months.forEach((month, index) => {
+                    month.classList.toggle('active', isSmallScreen ? index === currentMonthIndex : (index === currentMonthIndex || index === currentMonthIndex + 1));
+                });
+
+                elements.previousMonthBtn.style.display = currentMonthIndex === 0 ? 'none' : 'block';
+                elements.nextMonthBtn.style.display = isSmallScreen ? (currentMonthIndex >= elements.months.length - 1 ? 'none' : 'block') : (currentMonthIndex >= elements.months.length - 2 ? 'none' : 'block');
+            };
+
+            const updateCalendarVisibility = () => {
+                elements.calendarBoxes.forEach((box, index) => {
+                    box.style.display = (index >= currentIndex && index < currentIndex + 6) ? 'block' : 'none';
+                });
+
+                elements.previousButton.style.display = currentIndex === 0 ? 'none' : 'block';
+                elements.nextButton.style.display = currentIndex >= elements.calendarBoxes.length - 6 ? 'none' : 'block';
+            };
+
+            elements.tab1.classList.add('active-tabb');
+            showContent(elements.content1, elements.content2);
+            updateMonthVisibility();
+            updateCalendarVisibility();
+
+            elements.dateInputBox.addEventListener('click', toggleDatePicker);
+            elements.dateImg.addEventListener('click', toggleDatePicker);
+
+            document.addEventListener('click', function (event) {
+                const isClickInside = elements.dateInputBox.contains(event.target) || elements.dateImg.contains(event.target) || elements.datePicker.contains(event.target);
+                if (!isClickInside) {
+                    elements.datePicker.style.display = 'none';
+                }
+            });
+
+            elements.tab1.addEventListener('click', () => {
+                showContent(elements.content1, elements.content2);
+                elements.tab1.classList.add('active-tabb');
+                elements.tab2.classList.remove('active-tabb');
+            });
+
+            elements.tab2.addEventListener('click', () => {
+                showContent(elements.content2, elements.content1);
+                elements.tab2.classList.add('active-tabb');
+                elements.tab1.classList.remove('active-tabb');
+            });
+
+            elements.nextMonthBtn.addEventListener('click', () => {
+                const isSmallScreen = window.innerWidth <= 578;
+                if (currentMonthIndex < (isSmallScreen ? elements.months.length - 1 : elements.months.length - 2)) {
+                    currentMonthIndex++;
+                    updateMonthVisibility();
+                }
+            });
+
+            elements.previousMonthBtn.addEventListener('click', () => {
+                if (currentMonthIndex > 0) {
+                    currentMonthIndex--;
+                    updateMonthVisibility();
+                }
+            });
+
+            elements.nextButton.addEventListener('click', () => {
+                if (currentIndex < elements.calendarBoxes.length - 6) {
+                    currentIndex++;
+                    updateCalendarVisibility();
+                }
+            });
+
+            elements.previousButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCalendarVisibility();
+                }
+            });
+
+            elements.formDropdowns.forEach((dropdown) => {
+                dropdown.addEventListener('click', () => {
+                    elements.datePicker.style.display = 'none';
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                updateMonthVisibility();
+                updateCalendarVisibility();
+            });
+        });
+        // check-in/out
+
+        //.................. adults,children and rooms & children-trigger age box...................//
+        document.addEventListener('DOMContentLoaded', function () {
+            const staySelectPopup = document.getElementById('staySelectPopup');
+            const staySelect = staySelectPopup.querySelector('.stayselect');
+            const ageDropdown = document.querySelector('.age-dropdown');
+            const ageBtn = document.querySelector('.age-btn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+            const childrenCounter = staySelect.querySelector('.children-counter');
+            const formDropdowns = document.querySelectorAll('.form-dropdown');
+
+            staySelectPopup.addEventListener('click', function (event) {
+                const otherPopups = document.querySelectorAll('.other-popup-class');
+                otherPopups.forEach(popup => {
+                    if (popup !== staySelectPopup) {
+                        popup.classList.remove('show');
+                    }
+                });
+
+                staySelect.classList.toggle('show');
+            });
+
+            staySelect.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+
+            ageBtn.addEventListener('click', function (event) {
+                event.stopPropagation();
+                dropdownContent.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!staySelectPopup.contains(event.target) && !staySelect.contains(event.target)) {
+                    staySelect.classList.remove('show');
+                }
+                if (!dropdownContent.contains(event.target) && !ageBtn.contains(event.target)) {
+                    dropdownContent.classList.remove('show');
+                }
+            });
+
+            formDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function () {
+                    staySelect.classList.remove('show');
+                });
+            });
+
+            let selectedValues = [];
+
+            function updateCount(counterElement, increment) {
+                const countElement = counterElement.querySelector('p');
+                let count = parseInt(countElement.textContent, 10);
+                const initialCount = count;
+                count = increment ? count + 1 : count - 1;
+                if (count < 0) count = 0;
+                countElement.textContent = count;
+                updateStayId();
+
+                if (counterElement.classList.contains('children-counter')) {
+                    if (initialCount === 0 && count === 1) {
+                        ageDropdown.style.display = 'block';
+                    } else if (count === 0) {
+                        ageDropdown.style.display = 'none';
+                    }
+
+                    staySelect.querySelectorAll('.duplicated-item').forEach(item => {
+                        item.remove();
+                    });
+
+                    for (let i = 1; i < count; i++) {
+                        const clonedAgeBtn = ageBtn.cloneNode(true);
+                        const clonedDropdownContent = dropdownContent.cloneNode(true);
+
+                        clonedAgeBtn.classList.add('duplicated-item');
+                        clonedDropdownContent.classList.add('duplicated-item');
+
+                        clonedAgeBtn.querySelector('span').textContent = 'Age needed';
+
+                        clonedAgeBtn.addEventListener('click', function (event) {
+                            event.stopPropagation();
+                            clonedDropdownContent.classList.toggle('show');
+                        });
+
+                        clonedDropdownContent.addEventListener('click', function (event) {
+                            if (event.target.tagName === 'A') {
+                                const selectedText = event.target.textContent;
+                                clonedAgeBtn.querySelector('span').textContent = selectedText;
+                                clonedDropdownContent.classList.remove('show');
+                                selectedValues[i] = selectedText;
+                            }
+                        });
+
+                        ageDropdown.appendChild(clonedAgeBtn);
+                        ageDropdown.appendChild(clonedDropdownContent);
+
+                        if (selectedValues[i]) {
+                            clonedAgeBtn.querySelector('span').textContent = selectedValues[i];
+                        }
+                    }
+                }
+            }
+
+            function updateStayId() {
+                const adultsCount = document.querySelector('.adults-count').textContent;
+                const childrenCount = document.querySelector('.children-count').textContent;
+                const roomsCount = document.querySelector('.rooms-count').textContent;
+                document.getElementById('stayId').value = `${adultsCount} adults - ${childrenCount} Children - ${roomsCount} room${roomsCount > 1 ? 's' : ''}`;
+            }
+
+            const incrementButtons = staySelect.querySelectorAll('.increment');
+            const decrementButtons = staySelect.querySelectorAll('.decrement');
+
+            incrementButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const counterElement = button.parentElement;
+                    updateCount(counterElement, true);
+                });
+            });
+
+            decrementButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const counterElement = button.parentElement;
+                    updateCount(counterElement, false);
+                });
+            });
+
+            dropdownContent.querySelectorAll('a').forEach(item => {
+                item.addEventListener('click', function (event) {
+                    const selectedText = event.target.textContent;
+                    ageBtn.querySelector('span').textContent = selectedText;
+                    dropdownContent.classList.remove('show');
+                    event.stopPropagation();
+                    if (ageBtn === event.currentTarget.parentElement.parentElement.querySelector('.age-btn')) {
+                        selectedValues = [selectedText];
+                    }
+                });
+            });
+
+            updateStayId();
+
+            document.querySelector('.Done').addEventListener('click', function () {
+                staySelect.classList.remove('show');
+            });
+        });
+        //.................. adults,children and rooms & children-trigger age box............................//
+
+        //..........................booking-page currency-button............................../
+        document.addEventListener('DOMContentLoaded', function () {
+            var buttons = document.querySelectorAll('.currency-button');
+            var currencyButton = document.getElementById('currencyButton');
+            var overlay = document.getElementById("overlay");
+            var closeButton = document.querySelector(".close");
+            var currencyBox = document.getElementById("currencyBox");
+            var topCButton = document.querySelector('.currency-swapbtn');
+            var body = document.querySelector('body');
+
+            var selectedCurrencyCode = localStorage.getItem('selectedCurrency');
+
+            function updateCurrencyButton(code) {
+                currencyButton.textContent = code || "INR";
+            }
+
+            function updateTopCButton(name, code) {
+                topCButton.querySelector('span:first-child').textContent = name;
+                topCButton.querySelector('.currency-code').textContent = code;
+            }
+
+            function swapButtonContent(button, name, code) {
+                button.querySelector('span:first-child').textContent = name;
+                button.querySelector('.currency-code').textContent = code;
+            }
+
+            function handleButtonClick(currencyName, currencyCode) {
+                updateCurrencyButton(currencyCode);
+                updateTopCButton(currencyName, currencyCode);
+                localStorage.setItem('selectedCurrency', currencyCode);
+            }
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    var currencyName = this.querySelector('span:first-child').textContent;
+                    var currencyCode = this.querySelector('.currency-code').textContent;
+
+                    swapButtonContent(this, topCButton.querySelector('span:first-child').textContent,
+                        topCButton.querySelector('.currency-code').textContent);
+
+                    var selectedButton = document.querySelector('.selected');
+                    if (selectedButton) {
+                        selectedButton.classList.remove('selected');
+                    }
+                    this.classList.add('selected');
+
+                    handleButtonClick(currencyName, currencyCode);
+
+                    showCurrencyBox();
+                    closeCurrencyBox();
+                });
+            });
+
+            closeButton.addEventListener("click", closeCurrencyBox);
+            updateCurrencyButton("INR");
+
+            if (!selectedCurrencyCode) {
+                localStorage.setItem('selectedCurrency', "INR");
+            }
+        });
+
+        function showCurrencyBox() {
+            var currencyBox = document.getElementById("currencyBox");
+            var overlay = document.getElementById("overlay");
+            currencyBox.style.display = "block";
+            overlay.style.display = "block";
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeCurrencyBox() {
+            var currencyBox = document.getElementById("currencyBox");
+            var overlay = document.getElementById("overlay");
+            currencyBox.style.display = "none";
+            overlay.style.display = "none";
+            document.body.classList.remove('no-scroll');
+        }
+        //..........................booking-page currency-button..............................//
+    </script>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
